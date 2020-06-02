@@ -1,0 +1,329 @@
+.App {
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 5vh;
+    max-height: 8vh;
+    background: whitesmoke;
+    color: rgb(188, 218, 218);
+    font-weight: bold;
+}
+
+.nav-links {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-button {
+    background: whitesmoke;
+    border: none;
+    color: #5e6b72;
+    font-weight: bold;
+    max-height: 6vh;
+    padding: 5% 10%;
+    border-radius: 1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    transition-duration: 0.4s;
+    white-space: nowrap;
+}
+
+.nav-button:hover {
+    background-color: rgb(134, 241, 241);
+    /* Green */
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+    cursor: pointer;
+}
+
+#sign-up {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.login-trigger {
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to bottom right, #B05574, #F87E7B);
+    padding: 15px 30px;
+    border-radius: 30px;
+    position: relative;
+    top: 50%;
+}
+
+
+/*Modal*/
+
+h4 {
+    font-weight: bold;
+    color: #fff;
+}
+
+.close {
+    color: #fff;
+    transform: scale(1.2)
+}
+
+.modal-content {
+    font-weight: bold;
+    background: linear-gradient(to bottom right, rgb(199, 184, 183), #B05574);
+}
+
+.form-control {
+    margin: 1em 0;
+}
+
+.form-control:hover,
+.form-control:focus {
+    box-shadow: none;
+    border-color: #fff;
+}
+
+.username,
+.password {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: 2px solid #eee;
+    padding-left: 0;
+    font-weight: normal;
+    background: transparent;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: #eee;
+}
+
+.form-control:focus::-webkit-input-placeholder {
+    font-weight: bold;
+    color: #fff;
+}
+
+.login {
+    padding: 6px 20px;
+    border-radius: 20px;
+    background: none;
+    border: 2px solid #FAB87F;
+    color: #FAB87F;
+    font-weight: bold;
+    transition: all .5s;
+    margin-top: 1em;
+}
+
+.login:hover {
+    background: #FAB87F;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button */
+
+.close {
+    color: rgb(252, 252, 252);
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 999;
+    margin-right: 0px;
+    padding: 0%;
+    left: auto;
+    top: 0px;
+    right: 0px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.background {
+    min-height: 100vh;
+    width: auto;
+    background-image: url(hero-bg.jpg);
+    background-position: center center;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 1% 2vw;
+    font-size: 1.5rem;
+    color: whitesmoke;
+}
+
+.bg-img {
+    /* The image used */
+    background-image: url(sign-in.png);
+    /* Control the height of the image */
+    min-height: 60vh;
+    max-width: 97%;
+    /* Center and scale the image nicely */
+    right: 0%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: relative;
+}
+
+
+/* Add styles to the form container */
+
+.container {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    max-width: 50%;
+    padding: 16px;
+    background-color: white;
+}
+
+
+/* Full-width input fields */
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus,
+input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit button */
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+
+/* Shared */
+
+.loginBtn {
+    box-sizing: border-box;
+    position: relative;
+    /* width: 13em;  - apply for fixed size */
+    width: 100%;
+    padding: 0 15px 0 46px;
+    border: none;
+    text-align: left;
+    line-height: 2em;
+    white-space: nowrap;
+    border-radius: 0.2em;
+    font-size: 100%;
+    color: #FFF;
+}
+
+.loginBtn:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 100%;
+}
+
+.loginBtn:focus {
+    outline: none;
+}
+
+.loginBtn:active {
+    box-shadow: inset 0 0 0 32px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Google */
+
+.loginBtn--google {
+    /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+    background: #DD4B39;
+}
+
+.loginBtn--google:before {
+    border-right: #BB3F30 1px solid;
+    background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+    background: #E74B37;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:768px) {
+    .nav-button {
+        font-size: 50%;
+    }
+    .background {
+        font-size: 100%;
+    }
+    .loginBtn {
+        font-size: 50%;
+    }
+    .loginBtn::before {
+        font-size: 50%;
+    }
+}
