@@ -1,0 +1,81 @@
+.addInvest {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    min-height: 100vh;
+    width: auto;
+    background-position: center center;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.button-Cust {
+    font-size: 1rem;
+    padding: 14px 40px;
+    border: #a18cd1;
+    margin-left: 1em;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 2em;
+    border-radius: 1em;
+    outline: none;
+}
+
+.two-button button :hover {
+    cursor: pointer;
+}
+
+.newUser-form {
+    margin-top: 2em;
+}
+
+.newUser-first,
+.familycode,
+.addressfield {
+    display: flex;
+    flex-direction: row;
+    padding: 0em 2em;
+}
+
+.newUser-first input,
+.familycode input,
+.addressfield input {
+    display: inline;
+    font-size: 1rem;
+    border-radius: 1em;
+    margin-left: 0.3em;
+}
+
+.newUser-first label,
+.familycode label,
+.addressfield label {
+    margin-top: 0.7em;
+    margin-left: 1em;
+}
+
+.first-button {
+    outline: none;
+    padding: 1em 2em;
+    margin-left: 5em;
+    border-radius: 1em;
+    margin-top: 2em;
+    background-color: green;
+    color: antiquewhite;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+@media only screen and (max-width:768px) {
+    .newUser-first,
+    .familycode,
+    .addressfield {
+        flex-wrap: wrap;
+    }
+    .newUser-first label,
+    .familycode label,
+    .addressfield label {
+        display: none;
+    }
+}

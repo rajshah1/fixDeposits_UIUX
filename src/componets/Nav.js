@@ -1,7 +1,7 @@
 import React,{ useState , useEffect} from 'react';
 import '../App.css'; 
 import  {auth,provider} from'../componets/Firebase';
-import {Link,useHistory,useLocation,useParams, Redirect} from 'react-router-dom';
+import {Link,useHistory} from 'react-router-dom';
 
 
 
@@ -31,7 +31,6 @@ function Navbar(props){
         
     };
     var logout=()=>{
-        
         if(user!=null){
             auth.signOut().then(()=>{
                 setuser(null);
@@ -64,7 +63,7 @@ function Navbar(props){
         }).catch(error=>{alert("Error occured : " +error.code);});
         }
         catch(message){
-            alert(message+'\n'+"Please try again");
+            alert(message+"Please try again");
         }
     };
 

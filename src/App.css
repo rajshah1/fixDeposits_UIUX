@@ -53,10 +53,10 @@
     font-weight: bold;
     color: #fff;
     background: linear-gradient(to bottom right, #B05574, #F87E7B);
-    padding: 15px 30px;
-    border-radius: 30px;
+    padding: 1em 1em;
+    border-radius: 1em;
     position: relative;
-    top: 50%;
+    top: 10%;
 }
 
 
@@ -67,18 +67,13 @@ h4 {
     color: #fff;
 }
 
-.close {
-    color: #fff;
-    transform: scale(1.2)
-}
-
 .modal-content {
     font-weight: bold;
     background: linear-gradient(to bottom right, rgb(199, 184, 183), #B05574);
 }
 
 .form-control {
-    margin: 1em 0;
+    margin: 2em 0;
 }
 
 .form-control:hover,
@@ -92,7 +87,7 @@ h4 {
     border: none;
     border-radius: 0;
     box-shadow: none;
-    border-bottom: 2px solid #eee;
+    border-bottom: 0.5em solid #eee;
     padding-left: 0;
     font-weight: normal;
     background: transparent;
@@ -108,10 +103,10 @@ h4 {
 }
 
 .login {
-    padding: 6px 20px;
-    border-radius: 20px;
+    padding: 0.2em 20%;
+    border-radius: 10%;
     background: none;
-    border: 2px solid #FAB87F;
+    border: 0.5em solid #FAB87F;
     color: #FAB87F;
     font-weight: bold;
     transition: all .5s;
@@ -149,11 +144,11 @@ h4 {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     /* 15% from the top and centered */
-    padding: 20px;
+    padding: 1em;
     border: 1px solid #888;
-    width: 80%;
+    width: 80vw;
     /* Could be more or less, depending on screen size */
 }
 
@@ -163,14 +158,14 @@ h4 {
 .close {
     color: rgb(252, 252, 252);
     float: right;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: bold;
-    z-index: 999;
-    margin-right: 0px;
+    margin-left: 100%;
     padding: 0%;
     left: auto;
     top: 0px;
     right: 0px;
+    z-index: 999;
 }
 
 .close:hover,
@@ -192,7 +187,7 @@ h4 {
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: cover;
-    padding: 1% 2vw;
+    padding: 1% 3vw;
     font-size: 1.5rem;
     color: whitesmoke;
 }
@@ -202,7 +197,7 @@ h4 {
     background-image: url(sign-in.png);
     /* Control the height of the image */
     min-height: 60vh;
-    max-width: 97%;
+    max-width: 95%;
     /* Center and scale the image nicely */
     right: 0%;
     background-position: center center;
@@ -217,10 +212,12 @@ h4 {
 .container {
     position: absolute;
     right: 0;
-    margin: 20px;
+    margin: 1em;
     max-width: 50%;
-    padding: 16px;
+    max-height: 60vh;
+    padding: 1em;
     background-color: white;
+    z-index: 999;
 }
 
 
@@ -229,8 +226,8 @@ h4 {
 input[type=text],
 input[type=password] {
     width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
+    padding: 1.0em;
+    margin: 0.2em 0 22px 0;
     border: none;
     background: #f1f1f1;
 }
@@ -251,7 +248,7 @@ input[type=password]:focus {
     border: none;
     cursor: pointer;
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .btn:hover {
@@ -266,13 +263,16 @@ input[type=password]:focus {
     position: relative;
     /* width: 13em;  - apply for fixed size */
     width: 100%;
-    padding: 0 15px 0 46px;
+    padding: 0 1.8em 0 2.5em;
     border: none;
     text-align: left;
     line-height: 2em;
     white-space: nowrap;
     border-radius: 0.2em;
-    font-size: 100%;
+    font-size: 1.2rem;
+    align-content: center;
+    align-self: center;
+    text-align: center;
     color: #FFF;
 }
 
@@ -282,7 +282,7 @@ input[type=password]:focus {
     position: absolute;
     top: 0;
     left: 0;
-    width: 34px;
+    width: 1.2em;
     height: 100%;
 }
 
@@ -315,15 +315,22 @@ input[type=password]:focus {
 
 @media only screen and (max-width:768px) {
     .nav-button {
-        font-size: 50%;
+        font-size: 60%;
+    }
+    .container {
+        max-width: 100%;
+        max-width: 100%;
     }
     .background {
         font-size: 100%;
     }
-    .loginBtn {
-        font-size: 50%;
+    .bg-img {
+        background: linear-gradient(to bottom right, rgb(199, 184, 183), #B05574);
     }
-    .loginBtn::before {
-        font-size: 50%;
+    .loginBtn {
+        font-size: 60%;
+    }
+    .loginBtn:before {
+        font-size: 60%;
     }
 }
