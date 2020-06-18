@@ -27,38 +27,94 @@
     cursor: pointer;
 }
 
-.newUser-form {
+.newUser-form,
+.checkboxes,
+.amounts,
+.scheme-dob,
+.cbc {
     margin-top: 2em;
 }
 
 .newUser-first,
 .familycode,
-.addressfield {
+.addressfield,
+.timeline,
+.amounts,
+.nominee,
+.nominee1,
+.checkboxes,
+.scheme-dob,
+.cbc {
     display: flex;
     flex-direction: row;
     padding: 0em 2em;
 }
 
+.timeline {
+    padding: 0.5rem 1.5em;
+    display: flex;
+    flex-direction: row;
+}
+
+.checkboxes label,
+.checkboxes input {
+    font-size: 1rem;
+    align-items: center;
+    margin: 0 auto;
+}
+
 .newUser-first input,
 .familycode input,
-.addressfield input {
+.addressfield input,
+.nominee input,
+.nominee1 input,
+.checkboxes input,
+.scheme-dob input,
+.cbc input {
     display: inline;
     font-size: 1rem;
     border-radius: 1em;
     margin-left: 0.3em;
 }
 
+.plus-min button {
+    margin-left: 4em;
+}
+
+.timeline input,
+.amounts input {
+    display: block;
+    padding: 0em 5em;
+    font-size: 1rem;
+    border-radius: 1em;
+    margin-left: 0.3em;
+    outline: none;
+}
+
+.amounts input {
+    padding: 0.5em 9em;
+}
+
 .newUser-first label,
 .familycode label,
-.addressfield label {
+.addressfield label,
+.nominee label,
+.nominee1 label,
+.scheme-dob label,
+.cbc label {
     margin-top: 0.7em;
     margin-left: 1em;
+}
+
+.timeline label {
+    margin-top: 0.5em;
+    margin-left: 1em;
+    margin-right: 0.5em;
 }
 
 .first-button {
     outline: none;
     padding: 1em 2em;
-    margin-left: 5em;
     border-radius: 1em;
     margin-top: 2em;
     background-color: green;
@@ -67,15 +123,40 @@
     font-weight: bold;
 }
 
+#investment-form {
+    display: block;
+}
+
 @media only screen and (max-width:768px) {
     .newUser-first,
     .familycode,
-    .addressfield {
+    .addressfield,
+    .nominee,
+    .nominee1,
+    .amounts,
+    .scheme-dob,
+    .cbc {
         flex-wrap: wrap;
+    }
+    .timeline {
+        flex-wrap: wrap;
+    }
+    .timeline input,
+    .amounts input {
+        width: 100%;
+        display: block;
+        margin-top: 1em;
+        padding: 1em 5em;
     }
     .newUser-first label,
     .familycode label,
-    .addressfield label {
+    .addressfield label,
+    .nominee label,
+    .nominee1 label,
+    .timeline label,
+    .amounts label,
+    .scheme-dob label,
+    .cbc label {
         display: none;
     }
 }
