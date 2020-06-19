@@ -1,4 +1,4 @@
-name: Build and Deploy :::::: FOR Token in CLI :firebase login:ci
+name: Build and Deploy FOR Token in CLI :firebase login:ci
 on:
   push:
     branches:
