@@ -18,9 +18,9 @@ jobs:
         env:
           CI: ""
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@master
         with:
-          name: dist
+          name: dist-value
           path: dist
   deploy:
     name: Deploy
@@ -30,9 +30,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Download Artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@master
         with:
-          name: dist
+          name: dist-value
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
