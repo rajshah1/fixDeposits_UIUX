@@ -11,16 +11,15 @@ import {Link} from 'react-router-dom';
 function Dashboard(){
     var [username,Setusername]=useState('raj shah');
     useEffect(()=>{
-        userInfo();
-    },[]);
-    var userInfo=()=>{
-        if(auth.currentUser==null){
-            console.log(auth.currentUser.email);
+        if(auth.currentUser!=null){
+            
+        //    console.log(auth.currentUser.email);
             firebase.firestore().collection("users").doc(auth.currentUser.email).get()
             .then((DocumentType)=>{Setusername(DocumentType.get("name"))});
-            console.log(username);
+         //    console.log(username);
         }
-   }; 
+    },[]);
+    
    
    return (
     <div className="dashboard-start">

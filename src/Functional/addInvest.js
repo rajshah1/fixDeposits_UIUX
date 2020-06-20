@@ -177,7 +177,7 @@ function AddInvest(){
 
     const savenewcustomer=async(e)=>{
         e.preventDefault();
-       var responseData= await axios.post(`https://bank-deposit-managment.herokuapp.com/addInvestor`,addInvestorForm);
+       var responseData= await axios.post(`http://localhost:8080/addInvestor`,addInvestorForm);
         console.log(responseData);
         console.log(responseData.status);
         if(responseData.status===200){
