@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Install Dependencies
         run: npm install
         env:
@@ -20,22 +20,21 @@ jobs:
         env:
           CI: ""
       - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v2
         with:
-          name: dist
-          path: dist
+          name: dist-value
+          path: build/
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@v2
         with:
-          name: dist
-          path: dist
+          name: dist-value
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
