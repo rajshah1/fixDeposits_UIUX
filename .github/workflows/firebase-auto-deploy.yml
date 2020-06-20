@@ -1,4 +1,5 @@
-name: Build and Deploy FOR Token in CLI  --> firebase login:ci
+name: CI/CD
+
 on:
   push:
     branches:
@@ -6,36 +7,16 @@ on:
 
 jobs:
   build:
-    name: Build
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Install Dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-        env:
-          CI: ""
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: dist-value
-          path: dist
-  deploy:
-    name: Deploy
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: dist-value
-      - name: Deploy to Firebase
-        uses: w9jds/firebase-action@master
-        with:
-          args: deploy --only hosting
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        npm install
+        npm run build
+    - name: Firebase Deploy
+      run: |
+        sudo npm install -g firebase-tools
+        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
