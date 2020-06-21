@@ -201,12 +201,15 @@ function AddInvest(){
             arre[currentIndex].maturityDate=new Date(arre[currentIndex].maturityDate);
             arre[currentIndex].startDate=new Date(arre[currentIndex].startDate);
             arre[currentIndex].id=idforInvestInfo;
-            //console.log(item);
-            //console.log(idforInvestInfo);
-             var responseResultAddfdInfo= await axios.post(`http://localhost:8080/${currentUserId}/addfdinfo`,item);
-            //console.log(responseResultAddfdInfo); 
+            var responseResultAddfdInfo= await axios.post(`http://localhost:8080/${currentUserId}/addfdinfo`,item);
+            if(responseResultAddfdInfo.status!=200){
+                e.preventDefault();
+                alert("error occured: Please try again")
+            }
         }
-        
+        document.getElementById("newform").reset();
+        document.getElementById("Investment-Form-Data").reset();
+        console.log(InvestmentInfos);    
     };
     return(
     <div className="addInvest">
@@ -247,7 +250,7 @@ function AddInvest(){
 
         <div id="investment-form">
             <h3>Fix Deposit Details</h3>
-            <form onSubmit={addAllFDInfo}>
+            <form onSubmit={addAllFDInfo} id="Investment-Form-Data">
                 {InvestmentInfos.map((InvestmentInfo,index)=>(
                 <React.Fragment key={`${InvestmentInfo}${index}`}>    
                 <div className="addressfield">
