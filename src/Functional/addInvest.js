@@ -33,8 +33,8 @@ function AddInvest(){
         drawnOfBank:'',
         branch:'',
         maturatyAmount:0,
-        certificateNo:''
-        
+        certificateNo:'',
+        uid:auth.currentUser.uid
     }]);
 
 
@@ -149,7 +149,8 @@ function AddInvest(){
         drawnOfBank:'',
         branch:'',
         maturatyAmount:0,
-        certificateNo:''
+        certificateNo:'',
+        uid:auth.currentUser.uid
         });
 
         SetInvestmentInfo(valueData);
