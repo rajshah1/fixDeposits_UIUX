@@ -77,10 +77,6 @@
     margin-left: 0.3em;
 }
 
-.plus-min button {
-    margin-left: 4em;
-}
-
 .timeline input,
 .amounts input {
     display: block;
@@ -124,7 +120,7 @@
 }
 
 #investment-form {
-    display: block;
+    display: none;
 }
 
 @media only screen and (max-width:768px) {

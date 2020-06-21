@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react';
+import {auth} from '../componets/Firebase';
 import '../stylefiles/addInvest.css';
 import axios from 'axios';
 
 function AddInvest(){
-    
+    var[idforInvestInfo,SetidforInvestInfo]=useState("");
+    var[currentUserId,SetcurrentUserId]=useState(auth.currentUser.uid);
     var[addInvestorForm,SetaddInvestorForm]=useState({
         id:'',
         firstName:'',
@@ -79,7 +81,7 @@ function AddInvest(){
                 valuesInfo[index].maturityDate=matDt; 
          
             }
-            
+
         }    
         else if(nameValue==="period"){
             valuesInfo[index].period=Number(e.target.value); 
@@ -177,15 +179,16 @@ function AddInvest(){
 
     const savenewcustomer=async(e)=>{
         e.preventDefault();
-       var responseData= await axios.post(`http://localhost:8080/addInvestor`,addInvestorForm);
-        console.log(responseData);
-        console.log(responseData.status);
+        var responseData=await axios.post(`http://localhost:8080/${currentUserId}/addInvestor`,addInvestorForm);
+        //console.log(responseData);
+        //console.log(responseData.status);
         if(responseData.status===200){
             var newUserForm=document.getElementById("newform");
             newUserForm.style.pointerEvents="none";
             newUserForm.style.opacity=0.5;
             var investForm=document.getElementById("investment-form");
             investForm.style.display="block";
+            SetidforInvestInfo(responseData.data);
         }
         else{
             alert("Error Occured with this code"+responseData.status+" Error message"+responseData.statusText);
@@ -197,9 +200,11 @@ function AddInvest(){
         async function RefineData(item,currentIndex,arre){
             arre[currentIndex].maturityDate=new Date(arre[currentIndex].maturityDate);
             arre[currentIndex].startDate=new Date(arre[currentIndex].startDate);
-            console.log(item);
-           /*  var responseResult= await axios.post(`http://localhost:8080/addfdinfo`,item);
-            console.log(responseResult); */
+            arre[currentIndex].id=idforInvestInfo;
+            //console.log(item);
+            //console.log(idforInvestInfo);
+             var responseResultAddfdInfo= await axios.post(`http://localhost:8080/${currentUserId}/addfdinfo`,item);
+            //console.log(responseResultAddfdInfo); 
         }
         
     };
@@ -287,7 +292,7 @@ function AddInvest(){
                     <label htmlFor="scheme"><b>Scheme Name</b></label>
                     <input type="text" placeholder="Scheme Name" name="scheme" autoComplete="scheme"value={InvestmentInfo.scheme} onChange={e=>{updateInvestmentForm(e,index)}} required/>
                     <label htmlFor="drawnOfBank"><b>Drawn Of Bank</b></label>
-                    <input type="text" placeholder="Drawn Of Bank" name="drawnOfBank" autoComplete="drawnOfBank" value={InvestmentInfo.drawnOfBank} onChange={e=>{updateInvestmentForm(e,index)}} required/>
+                    <input type="text" placeholder="Drawn Bank" name="drawnOfBank" autoComplete="drawnOfBank" value={InvestmentInfo.drawnOfBank} onChange={e=>{updateInvestmentForm(e,index)}} required/>
                 </div>
                 <div className="cbc">
                     <label htmlFor="chequeNo"><b>Cheque No</b></label>

@@ -9,17 +9,17 @@ import viewImage from '../marketing.svg';
 import {Link} from 'react-router-dom';
 
 function Dashboard(){
-    var [username,Setusername]=useState('raj shah');
+    var [username,Setusername]=useState('Guest');
     useEffect(()=>{
-        if(auth.currentUser!=null){
+    },[]);
+    //change this in prod to !=
+    if(auth.currentUser==null){
             
         //    console.log(auth.currentUser.email);
             firebase.firestore().collection("users").doc(auth.currentUser.email).get()
             .then((DocumentType)=>{Setusername(DocumentType.get("name"))});
          //    console.log(username);
         }
-    },[]);
-    
    
    return (
     <div className="dashboard-start">
@@ -28,7 +28,7 @@ function Dashboard(){
         
         <Link className="dashboard-link" to='/addInvestor'><div className="flex-item"><img className="flex-image" src={addImage} height="100" alt='addImage'/>ADD</div></Link>
             <div className="flex-item"><img className="flex-image" src={updateImage} height="100" alt='addImage'/>UPDATE</div>
-            <div className="flex-item"><img className="flex-image" src={viewImage} height="100" alt='addImage' />VIEW</div>
+        <Link className="dashboard-link" to='/viewInfo'><div className="flex-item"><img className="flex-image" src={viewImage} height="100" alt='addImage' />VIEW</div></Link>
             <div className="flex-item"><img className="flex-image" src={printImage} height="100" alt='addImage'/>PRINT</div>
             <div className="flex-item"><img className="flex-image" src={removeImage} height="100" alt='addImage'/>DELETE</div>
         </div>
