@@ -9,6 +9,7 @@ import viewImage from '../marketing.svg';
 import {Link} from 'react-router-dom';
 
 function Dashboard(){
+    
     var [username,Setusername]=useState('Guest');
     useEffect(()=>{
     },[]);
@@ -19,7 +20,8 @@ function Dashboard(){
             firebase.firestore().collection("users").doc(auth.currentUser.email).get()
             .then((DocumentType)=>{Setusername(DocumentType.get("name"))});
          //    console.log(username);
-        }
+    }
+
    
    return (
     <div className="dashboard-start">

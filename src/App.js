@@ -8,18 +8,15 @@ import  AddInvest from './Functional/addInvest';
 import  viewInfoData from './Functional/viewInfoData';
 import {BrowserRouter as Router,Switch,Route, Redirect} from 'react-router-dom';
 function App() {
-  var [userVal,SetuserVal]=useState(null);
-  
+
 
   useEffect(()=>{
-      auth.onAuthStateChanged(function(userVal){ if(userVal){
-      SetuserVal(userVal);  
-    }}); 
+
 },[]);
 
   const PrivateRoute=({component:Component,...rest})=>(
     <Route render={
-      props => ( userVal ? <Component/> : <Redirect to='/'/> )
+      props => ( auth.currentUser ? <Component/> : <Redirect to='/'/> )
     }/>
   );
 

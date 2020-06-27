@@ -18,6 +18,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-left: 0em;
 }
 
 .nav-button {
@@ -34,6 +35,7 @@
     font-size: 1rem;
     transition-duration: 0.4s;
     white-space: nowrap;
+    margin-left: 1em;
 }
 
 .nav-button:hover {
@@ -315,7 +317,7 @@ input[type=password]:focus {
 
 @media only screen and (max-width:768px) {
     .nav-button {
-        font-size: 60%;
+        font-size: 80%;
     }
     .container {
         max-width: 100%;
