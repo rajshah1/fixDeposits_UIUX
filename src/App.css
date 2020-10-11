@@ -146,11 +146,11 @@ h4 {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 10% auto;
+    margin: 7% auto;
     /* 15% from the top and centered */
     padding: 1em;
     border: 1px solid #888;
-    width: 80vw;
+    width: 60vw;
     /* Could be more or less, depending on screen size */
 }
 
@@ -160,10 +160,9 @@ h4 {
 .close {
     color: rgb(252, 252, 252);
     float: right;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: bold;
     margin-left: 100%;
-    padding: 0%;
     left: auto;
     top: 0px;
     right: 0px;
@@ -172,12 +171,12 @@ h4 {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: cadetblue;
     text-decoration: none;
     cursor: pointer;
 }
 
-.background {
+.firstPage {
     min-height: 100vh;
     width: auto;
     background-image: url(hero-bg.jpg);
@@ -194,14 +193,18 @@ h4 {
     color: whitesmoke;
 }
 
+.firstPage h3,
+p {
+    text-align: start;
+}
+
 .bg-img {
-    /* The image used */
     background-image: url(sign-in.png);
-    /* Control the height of the image */
     min-height: 60vh;
-    max-width: 95%;
+    max-width: 90%;
     /* Center and scale the image nicely */
     right: 0%;
+    left: 2%;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: auto;
@@ -215,8 +218,8 @@ h4 {
     position: absolute;
     right: 0;
     margin: 1em;
-    max-width: 50%;
-    max-height: 60vh;
+    max-width: 60%;
+    max-height: 90%;
     padding: 1em;
     background-color: white;
     z-index: 999;
