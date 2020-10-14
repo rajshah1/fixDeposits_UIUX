@@ -6,7 +6,6 @@ import {Link,useHistory} from 'react-router-dom';
 
 
 function Navbar(props){
-
     var [emailId,SetemailId]=useState("");
     var [pass,Setpass]=useState("");
     var[user,setuser]=useState(null);
@@ -75,7 +74,6 @@ function Navbar(props){
                 var response=auth.signInWithEmailAndPassword(emailId,pass).then((result)=>{
                 const user=result.user;
                 setuser({user});
-                console.log(user);
                 ActivateDashBoard();
                 modalClose();
             }).catch(error=>{
@@ -113,7 +111,7 @@ function Navbar(props){
             <div className="bg-img">
                 <form onSubmit={validateAndSignIn} className="container">
                 <button className="loginBtn loginBtn--google" onClick={GoogleLogin}>Login with Google</button>
-                    <h4>OR</h4>    
+                    <h3>OR</h3>    
                     <label htmlFor="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" value={emailId} onChange={e=>{SetemailId(e.target.value)}} required/>
                     <label htmlFor="psw"><b>Password</b></label>

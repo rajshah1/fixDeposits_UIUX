@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
-import  Navbar from'./componets/Nav';
+import  Navbar from'./componets/Nav.jsx';
 import  FirstPage from'./componets/FirstPage';
 import  dashboard from'./Functional/Dashboard';
 import  {auth} from './componets/Firebase';

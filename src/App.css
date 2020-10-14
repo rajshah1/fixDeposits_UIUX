@@ -225,6 +225,10 @@ p {
     z-index: 999;
 }
 
+.container h3 {
+    color: #0e1214;
+}
+
 
 /* Full-width input fields */
 
@@ -287,7 +291,7 @@ input[type=password]:focus {
     position: absolute;
     top: 0;
     left: 0;
-    width: 1.2em;
+    width: 1.7em;
     height: 100%;
 }
 
@@ -314,13 +318,13 @@ input[type=password]:focus {
 
 .loginBtn--google:hover,
 .loginBtn--google:focus {
-    background: #E74B37;
+    background: rgb(204, 136, 129);
     cursor: pointer;
 }
 
 @media only screen and (max-width:768px) {
     .nav-button {
-        font-size: 80%;
+        font-size: 100%;
     }
     .container {
         max-width: 100%;
@@ -333,9 +337,12 @@ input[type=password]:focus {
         background: linear-gradient(to bottom right, rgb(199, 184, 183), #B05574);
     }
     .loginBtn {
-        font-size: 60%;
+        font-size: 80%;
     }
     .loginBtn:before {
-        font-size: 60%;
+        font-size: 0%;
+    }
+    .close {
+        font-size: 2rem;
     }
 }
