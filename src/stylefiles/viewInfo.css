@@ -1,0 +1,69 @@
+.view-main {
+    font-family: Roboto;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    min-height: 100vh;
+    width: auto;
+    background-position: center center;
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    padding: 1% 5vw;
+    position: static;
+    width: auto;
+}
+
+.viewinfo-form {
+    width: 50vw;
+    box-sizing: content-box;
+    border: 3px solid;
+    border-radius: 1em;
+    border-color: rgb(184, 164, 164);
+    margin: auto;
+}
+
+.viewinfo-form input,
+button {
+    margin-top: 1em;
+}
+
+.viewform-datesInput input {
+    font-size: 2rem;
+    border-radius: 5%;
+    background: #ecf0f1;
+    padding: 5px;
+}
+
+.three-view-button {
+    display: inline;
+    padding: 1em 3em;
+    margin: 1em 0.3em 0.3em 0;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #FFFFFF;
+    background-color: #50a095;
+    text-align: center;
+    transition: all 0.2s;
+    outline: none;
+}
+
+.three-view-button:hover {
+    background-color: #4095c6;
+    cursor: pointer;
+}
+
+.searchCustomerById input[type=text] {
+    width: 10%;
+}
+
+.selector-init-matu {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+@media only screen and (max-width:768px) {}

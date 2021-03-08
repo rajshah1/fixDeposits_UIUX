@@ -99,8 +99,8 @@ function Navbar(props){
             <ul className='nav-links'>
                 <Link className='nav-button' id='sign-up'to='/dashboard'>Dashboard</Link>
                 {user? 
-                <button className='nav-button' id='logout' onClick={logout}>Logout</button>
-                :<button className='nav-button' id='logIn' onClick={modalShow}>Login</button>
+                <Link className='nav-button' id='logout' onClick={logout}>Logout</Link>
+                :<Link className='nav-button' id='logIn' onClick={modalShow}>Login</Link>
                 }
             </ul>
         </nav>
@@ -115,7 +115,7 @@ function Navbar(props){
                     <label htmlFor="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" name="email" value={emailId} onChange={e=>{SetemailId(e.target.value)}} required/>
                     <label htmlFor="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" value={pass} onChange={e=>{Setpass(e.target.value)}}required/>
+                    <input type="password" placeholder="Enter Magic Word!" name="psw" value={pass} onChange={e=>{Setpass(e.target.value)}}required/>
                     <button type="submit" className="btn">Login</button>
                 </form>
             </div>
