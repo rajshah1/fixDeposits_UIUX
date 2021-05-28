@@ -97,9 +97,9 @@ function Navbar(props){
         <nav className='nav-bar'>
             <img src={require('../logo-dark.png')} height="28" alt="CoolBrand"></img>
             <ul className='nav-links'>
-                <Link className='nav-button' id='sign-up'to='/dashboard'>Dashboard</Link>
+                <Link className='nav-button' id='sign-up' to='/dashboard'>Dashboard</Link>
                 {user? 
-                <Link className='nav-button' id='logout' onClick={logout}>Logout</Link>
+                <Link className='nav-button' id='logout' onClick={logout} to='/'>Logout</Link>
                 :<Link className='nav-button' id='logIn' onClick={modalShow}>Login</Link>
                 }
             </ul>

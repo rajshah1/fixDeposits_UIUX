@@ -57,8 +57,9 @@ button {
     cursor: pointer;
 }
 
-.searchCustomerById input[type=text] {
-    width: 10%;
+.searchCustomerById {
+    width: 30%;
+    text-align: center;
 }
 
 .selector-init-matu {

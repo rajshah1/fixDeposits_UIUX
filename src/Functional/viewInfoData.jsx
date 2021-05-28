@@ -24,8 +24,19 @@ function ViewInfoData() {
     };
 
 
-    function MangementReportCall() {
-
+    const MangementReportCall= async (e) => {
+        e.preventDefault();
+        axios({
+            url: `http://localhost:8080/${currentUserId}/managmentReport`, data: searchParams
+            , responseType: 'blob', method: 'POST'
+        }).then((response) => {
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'ManagmentReport.pdf');
+            document.body.appendChild(link);
+            link.click();
+        });
     };
 
     const ClientReportCall = async (e) => {
@@ -78,7 +89,7 @@ function ViewInfoData() {
                         <br />
                     </div>
                     <div className="action-button">
-                        <button className="three-view-button" onClick={MangementReportCall} >Managment Report</button>
+                        <button className="three-view-button" onClick={e=>MangementReportCall(e)} >Managment Report</button>
                         <br />
                         <button className="three-view-button" onClick={e => ClientReportCall(e)}>Client Intimation Report</button>
                         <br />

@@ -10,17 +10,18 @@ import {Link} from 'react-router-dom';
 
 function Dashboard(){
     
-    var [username,Setusername]=useState('Guest');
+    var [username,Setusername]=useState('');
     useEffect(()=>{
+        //change this in prod to !=
+        if(auth.currentUser!=null){
+            //    console.log(auth.currentUser.email);
+                firebase.firestore().collection("users").doc(auth.currentUser.email).get()
+                .then((DocumentType)=>{Setusername(DocumentType.get("name"))});
+             //    console.log(username);
+        }
     },[]);
-    //change this in prod to !=
-    if(auth.currentUser==null){
-            
-        //    console.log(auth.currentUser.email);
-            firebase.firestore().collection("users").doc(auth.currentUser.email).get()
-            .then((DocumentType)=>{Setusername(DocumentType.get("name"))});
-         //    console.log(username);
-    }
+    
+   
 
    
    return (

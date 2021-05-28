@@ -2,6 +2,8 @@ import React,{useState,useEffect} from 'react';
 import {auth} from '../componets/Firebase';
 import '../stylefiles/addInvest.css';
 import axios from 'axios';
+import AddExistingInevst from './AddExisitingInvest';
+
 
 function AddInvest(){
     var[idforInvestInfo,SetidforInvestInfo]=useState("");
@@ -245,7 +247,8 @@ function AddInvest(){
         
         
         <div id="UpdateExistingUser">
-                <p>This is Developing</p>
+                
+                <AddExistingInevst />
         </div>
 
 
