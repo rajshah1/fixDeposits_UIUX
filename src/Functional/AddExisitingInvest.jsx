@@ -12,7 +12,7 @@ function AddExistingInvest() {
     
 
     const SearchDBByfamilyCode = async(e) => {
-        firestore.collection(currentUserId).where("familyCode","==",familycode).get().then((e)=>{e.})
+       // firestore.collection(currentUserId).where("familyCode","==",familycode).get().then((e)=>{e.})
         var responseData=await axios.get(`http://localhost:8080/${currentUserId}/getInvestorsFromID/${familycode}`);
         console.log(responseData.data);
         SetInvestorInfoList((perv)=>[...perv,...responseData.data]);
