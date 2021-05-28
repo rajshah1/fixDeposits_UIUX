@@ -182,7 +182,7 @@ function AddInvest(){
 
     const savenewcustomer=async(e)=>{
         e.preventDefault();
-        var responseData=await axios.post(`http://localhost:8080/${currentUserId}/addInvestor`,addInvestorForm);
+        var responseData=await axios.post(`https://fdproject-api.azurewebsites.net/${currentUserId}/addInvestor`,addInvestorForm);
         //console.log(responseData);
         //console.log(responseData.status);
         if(responseData.status===200){
@@ -204,7 +204,7 @@ function AddInvest(){
             arre[currentIndex].maturityDate=new Date(arre[currentIndex].maturityDate);
             arre[currentIndex].startDate=new Date(arre[currentIndex].startDate);
             arre[currentIndex].id=idforInvestInfo;
-            var responseResultAddfdInfo= await axios.post(`http://localhost:8080/${currentUserId}/addfdinfo`,item);
+            var responseResultAddfdInfo= await axios.post(`https://fdproject-api.azurewebsites.net/${currentUserId}/addfdinfo`,item);
             if(responseResultAddfdInfo.status!=200){
                 e.preventDefault();
                 alert("error occured: Please try again")
