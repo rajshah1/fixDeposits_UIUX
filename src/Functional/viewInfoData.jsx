@@ -8,6 +8,7 @@ import axios from 'axios';
 
 
 function ViewInfoData() {
+    var hostval="http://fdproject-api.azurewebsites.net";
     var [currentUserId, SetcurrentUserId] = useState(auth.currentUser.uid);
     var [familyId, SetFamilyId] = useState("");
     var [searchParams, SetSearchParams] = useState({
@@ -27,7 +28,7 @@ function ViewInfoData() {
     const MangementReportCall= async (e) => {
         e.preventDefault();
         axios({
-            url: `http://localhost:8080/${currentUserId}/managmentReport`, data: searchParams
+            url: `${hostval}/${currentUserId}/managmentReport`, data: searchParams
             , responseType: 'blob', method: 'POST'
         }).then((response) => {
             const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -43,7 +44,7 @@ function ViewInfoData() {
         e.preventDefault();
         //console.log(searchParams);
         axios({
-            url: `http://localhost:8080/${currentUserId}/PrintMultiReportPDF`, data: searchParams
+            url: `${hostval}/${currentUserId}/PrintMultiReportPDF`, data: searchParams
             , responseType: 'blob', method: 'POST'
         }).then((response) => {
             const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -57,7 +58,7 @@ function ViewInfoData() {
     const ClientFullStatment = (e) => {
         e.preventDefault();
         axios({
-            url: `http://localhost:8080/${currentUserId}/fullstatByClientID/${familyId}`, responseType: 'blob', method: 'GET'
+            url: `${hostval}/${currentUserId}/fullstatByClientID/${familyId}`, responseType: 'blob', method: 'GET'
         }).then((response) => {
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
