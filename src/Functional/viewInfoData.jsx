@@ -8,7 +8,7 @@ import axios from 'axios';
 
 
 function ViewInfoData() {
-    var hostval="http://fdproject-api.azurewebsites.net";
+    var hostval="https://fdproject-api.azurewebsites.net";
     var [currentUserId, SetcurrentUserId] = useState(auth.currentUser.uid);
     var [familyId, SetFamilyId] = useState("");
     var [searchParams, SetSearchParams] = useState({
