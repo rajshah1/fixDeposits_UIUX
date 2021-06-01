@@ -196,7 +196,7 @@ function AddInvest(){
         else{
             alert("Error Occured with this code"+responseData.status+" Error message"+responseData.statusText);
         }
-    }
+    };
     const addAllFDInfo=(e)=>{
         e.preventDefault();
         InvestmentInfos.forEach(RefineData)

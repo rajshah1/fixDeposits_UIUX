@@ -9,11 +9,6 @@ import  viewInfoData from './Functional/viewInfoData';
 import {BrowserRouter as Router,Switch,Route, Redirect} from 'react-router-dom';
 function App() {
 
-
-  useEffect(()=>{
-
-},[]);
-
   const PrivateRoute=({component:Component,...rest})=>(
     <Route render={
       props => ( auth.currentUser ? <Component/> : <Redirect to='/'/> )
